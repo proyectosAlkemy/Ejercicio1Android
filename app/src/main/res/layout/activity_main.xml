@@ -12,8 +12,8 @@
       android:id="@+id/primerET"
       android:layout_width="200dp"
       android:layout_height="60dp"
-      android:inputType="textWebEmailAddress"
       android:hint="@string/entrada1"
+      android:inputType="textWebEmailAddress"
 
       />
     <EditText
