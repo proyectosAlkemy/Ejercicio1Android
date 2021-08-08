@@ -17,4 +17,8 @@ class Preferencias(val context: Context) {
 
         return almacenamiento.getString(usuario, "")!!
     }
+    fun limpiar(){
+
+        almacenamiento.edit().clear().apply()
+    }
 }
