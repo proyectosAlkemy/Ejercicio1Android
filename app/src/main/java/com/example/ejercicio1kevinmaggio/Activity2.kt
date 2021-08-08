@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.ejercicio1kevinmaggio.UsuarioRegistrado.Companion.pref
 
 class Activity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,6 @@ class Activity2 : AppCompatActivity() {
         val bundle= intent.extras
        val valor= bundle?.get("datos")
         val etPantalla1 = findViewById<TextView>(R.id.salida)
-        etPantalla1.text = "Bien venido $valor, gracias por usas mi App. "
+        etPantalla1.text = "Bien venido ${pref.dameUsuario()}, gracias por usas mi App. "
     }
 }
