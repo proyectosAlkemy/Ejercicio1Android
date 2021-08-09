@@ -1,21 +1,23 @@
-package com.example.ejercicio1kevinmaggio
+package com.example.ejercicio1kevinmaggio.View
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
-import com.example.ejercicio1kevinmaggio.UsuarioRegistrado.Companion.pref
-import java.util.*
-import kotlin.concurrent.thread
+import com.example.ejercicio1kevinmaggio.Presenter.UsuarioRegistrado.Companion.pref
+import com.example.ejercicio1kevinmaggio.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+private lateinit var binding:ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val boton=findViewById<Button>(R.id.boton)
-        boton.setOnClickListener {  checkPush()}
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.boton.setOnClickListener { checkPush() }
         comprobar()
 
 
@@ -29,11 +31,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun checkPush(){
-        val entrada1= findViewById<EditText>(R.id.primerET)
-        if(entrada1.text.isNotEmpty()){
-            pref.grabarUsuario(entrada1.text.toString())
-            val intent=Intent(this,Activity2::class.java)
-            intent.putExtra("datos",entrada1.text)
+
+        if(binding.primerET.text.isNotEmpty()){
+            pref.grabarUsuario(binding.primerET.text.toString())
+            val intent=Intent(this, Activity2::class.java)
+            intent.putExtra("datos",binding.primerET.text)
             startActivity(intent)
 
         }else{msgError()

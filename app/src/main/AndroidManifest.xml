@@ -5,7 +5,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".UsuarioRegistrado"
+        android:name=".Presenter.UsuarioRegistrado"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -13,10 +13,10 @@
         android:theme="@style/Theme.Ejercicio1KevinMaggio">
 
         <activity
-            android:name=".Activity2"
+            android:name=".View.Activity2"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:exported="true"/>
             <activity
                 android:name=".Splash"
